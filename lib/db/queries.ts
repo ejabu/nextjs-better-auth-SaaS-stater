@@ -13,13 +13,13 @@ export async function updateOrganizationSubscription(
     subscriptionStatus: string;
   }
 ) {
-  await db
-    .update(subscriptions)
-    .set({
-      ...subscriptionData,
-      updatedAt: new Date(),
-    })
-    .where(eq(organizations.id, organizationId));
+  // await db
+  //   .update(subscriptions)
+  //   .set({
+  //     ...subscriptionData,
+  //     updatedAt: new Date(),
+  //   })
+  //   .where(eq(organizations.id, organizationId));
 }
 
 export async function getUserWithTeam(userId: string) {

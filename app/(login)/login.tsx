@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,9 +10,8 @@ import { authClient } from "@/lib/auth-client";
 import { fetchCallback } from "@/lib/utils";
 
 export function Login({ mode = "signin" }: { mode?: "signin" | "signup" }) {
-  const searchParams = useSearchParams();
-  const redirect = searchParams.get("redirect");
-  const priceId = searchParams.get("priceId");
+  const redirect = "";
+  const priceId = "1";
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [email, setEmail] = useState("");

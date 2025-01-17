@@ -43,10 +43,6 @@ export function Header({ initialSession }: { initialSession: Session | null }) {
             <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer size-9">
-                  <AvatarImage
-                    alt={activeSession.user.name || ""}
-                    src={activeSession.user.image}
-                  />
                   <AvatarFallback>
                     {activeSession.user.email
                       .split(" ")
