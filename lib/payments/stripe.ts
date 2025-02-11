@@ -12,7 +12,7 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function createCheckoutSession({ priceId }: { priceId: string }) {
   const user = await auth.api.getSession({
-    headers: headers(),
+    headers: await headers(),
   });
 
   if (!user || !user.session.activeOrganizationId) {
@@ -57,7 +57,7 @@ export async function createCheckoutSession({ priceId }: { priceId: string }) {
 
 export async function createCustomerPortalSession() {
   const session = await auth.api.getSession({
-    headers: headers(),
+    headers: await headers(),
   });
   if (!session) {
     throw new Error("User not found");

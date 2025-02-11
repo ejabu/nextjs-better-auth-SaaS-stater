@@ -8,7 +8,7 @@ export default async function Layout({
   children: React.ReactNode;
 }) {
   const session = await auth.api.getSession({
-    headers: headers(),
+    headers: await headers(),
   });
   return (
     <section className="flex flex-col min-h-screen">

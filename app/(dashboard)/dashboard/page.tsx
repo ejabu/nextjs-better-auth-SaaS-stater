@@ -5,14 +5,14 @@ import { redirect } from "next/navigation";
 
 export default async function SettingsPage() {
   const session = await auth.api.getSession({
-    headers: headers(),
+    headers: await headers(),
   });
   if (!session) {
     throw redirect("/sign-in");
   }
   if (!session.session.activeOrganizationId) {
     await auth.api.setActiveOrganization({
-      headers: headers(),
+      headers: await headers(),
       body: {
       },
     });

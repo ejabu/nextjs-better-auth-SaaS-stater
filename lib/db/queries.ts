@@ -38,7 +38,7 @@ export async function getUserWithTeam(userId: string) {
 
 export async function getActivityLogs() {
   const user = await auth.api.getSession({
-    headers: headers(),
+    headers: await headers(),
   });
 
   if (!user) {
